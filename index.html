@@ -1,283 +1,1137 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ResultVani - Government Jobs, Results & Exam Updates</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  color: #222;
+html{
+  scroll-behavior:smooth;
 }
 
-.header {
-  background: #8b0000;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f8fc;
+  color:#172b4d;
 }
 
-.header h1 {
-  font-size: 36px;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-.header p {
-  margin-top: 8px;
-  font-size: 15px;
+/* HEADER */
+.header{
+  background:white;
+  padding:18px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
-.nav {
-  background: #111;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  padding: 13px 18px;
-  font-weight: bold;
+.logo-icon{
+  font-size:50px;
 }
 
-.nav a:hover {
-  background: #8b0000;
+.logo h1{
+  font-size:40px;
+  color:#087eea;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 0 12px;
+.logo h1 span{
+  color:#123d78;
 }
 
-.search {
-  background: white;
-  padding: 18px;
-  text-align: center;
-  border: 1px solid #ddd;
+.logo p{
+  color:#555;
+  font-size:13px;
 }
 
-.search input {
-  width: 75%;
-  padding: 12px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  font-size: 15px;
+.tagline{
+  color:#123d78;
+  font-size:18px;
+  font-weight:bold;
+  text-align:right;
 }
 
-.search button {
-  padding: 12px 20px;
-  background: #8b0000;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+/* NAVIGATION */
+.nav{
+  background:#073b78;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
-.notice {
-  background: #fff3cd;
-  padding: 12px;
-  margin: 15px 0;
-  border-left: 5px solid #ff9800;
-  font-weight: bold;
+.nav a{
+  color:white;
+  padding:16px 18px;
+  font-size:15px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+.nav a:hover{
+  background:#087eea;
 }
 
-.card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
+/* HERO */
+.hero{
+  min-height:280px;
+  background:linear-gradient(90deg,#062a55,#14669c);
+  color:white;
+  padding:55px 7%;
+  display:flex;
+  align-items:center;
 }
 
-.card h2 {
-  color: white;
-  background: #8b0000;
-  text-align: center;
-  padding: 12px;
-  font-size: 20px;
+.hero h2{
+  font-size:42px;
+  line-height:1.15;
 }
 
-.card ul {
-  list-style: none;
-  padding: 10px 15px;
+.hero h2 span{
+  color:#ffd21c;
 }
 
-.card li {
-  border-bottom: 1px solid #eee;
-  padding: 11px 4px;
+.hero p{
+  margin-top:18px;
+  font-size:18px;
 }
 
-.card li:last-child {
-  border-bottom: none;
+/* SEARCH */
+.search-area{
+  background:white;
+  padding:25px 8%;
 }
 
-.card a {
-  color: #0645ad;
-  text-decoration: none;
+.search-box{
+  display:flex;
+  max-width:850px;
+  margin:auto;
 }
 
-.card a:hover {
-  text-decoration: underline;
+.search-box input{
+  flex:1;
+  padding:16px 20px;
+  border:2px solid #b8d9ff;
+  border-radius:30px 0 0 30px;
+  font-size:16px;
+  outline:none;
 }
 
-.footer {
-  margin-top: 30px;
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
+.search-box button{
+  border:0;
+  background:#087eea;
+  color:white;
+  padding:0 30px;
+  border-radius:0 30px 30px 0;
+  font-size:16px;
+  cursor:pointer;
 }
 
-@media (max-width: 700px) {
-  .header h1 {
-    font-size: 28px;
+/* QUICK LINKS */
+.quick{
+  padding:20px 5%;
+  background:white;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.quick strong{
+  color:#123d78;
+  font-size:17px;
+}
+
+.quick a{
+  background:#eef6ff;
+  color:#064b94;
+  padding:9px 15px;
+  border-radius:20px;
+  border:1px solid #cde4ff;
+}
+
+/* CATEGORY CARDS */
+.cards{
+  padding:35px 4%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  color:white;
+  padding:26px;
+  min-height:125px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 5px 15px #0002;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+}
+
+.card h3{
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.card p{
+  font-size:14px;
+}
+
+.blue{background:#0874d1}
+.green{background:#09a66a}
+.red{background:#ed3150}
+.orange{background:#ff8b18}
+.purple{background:#5130c8}
+.cyan{background:#119dad}
+
+.arrow{
+  font-size:30px;
+}
+
+/* CONTENT */
+.content{
+  padding:0 4% 40px;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:25px;
+}
+
+.section-box{
+  background:white;
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 3px 12px #0001;
+}
+
+.section-box h2{
+  color:#123d78;
+  margin-bottom:18px;
+}
+
+/* UPDATE ITEM */
+.update{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:15px 5px;
+  border-bottom:1px solid #ddd;
+}
+
+.update a{
+  color:#123d78;
+  font-weight:bold;
+}
+
+.update span{
+  color:#777;
+  white-space:nowrap;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  background:#087eea;
+  color:white;
+  padding:8px 14px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#075cae;
+}
+
+/* BOARD GRID */
+.board-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.board{
+  background:#f2f7ff;
+  border:1px solid #d5e6ff;
+  padding:18px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.board h3{
+  color:#123d78;
+  margin-bottom:12px;
+}
+
+.board a{
+  display:block;
+  background:#087eea;
+  color:white;
+  padding:8px;
+  margin-top:7px;
+  border-radius:5px;
+  font-size:13px;
+}
+
+/* QUOTE */
+.quote{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.quote h3{
+  color:#123d78;
+  line-height:1.6;
+}
+
+.quote p{
+  margin-top:15px;
+  color:#087eea;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#062b55;
+  color:white;
+  padding:35px 5%;
+}
+
+.footer-main{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-logo{
+  font-size:27px;
+  font-weight:bold;
+}
+
+.copyright{
+  text-align:center;
+  border-top:1px solid #ffffff33;
+  margin-top:25px;
+  padding-top:20px;
+  color:#ddd;
+}
+
+/* MOBILE */
+@media(max-width:750px){
+
+  .header{
+    padding:15px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  .logo h1{
+    font-size:30px;
   }
 
-  .search input {
-    width: 100%;
-    margin-bottom: 8px;
+  .logo-icon{
+    font-size:38px;
   }
 
-  .search button {
-    width: 100%;
+  .logo p{
+    font-size:10px;
   }
+
+  .tagline{
+    display:none;
+  }
+
+  .nav a{
+    padding:11px 9px;
+    font-size:12px;
+  }
+
+  .hero{
+    min-height:230px;
+    padding:35px 22px;
+  }
+
+  .hero h2{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .search-area{
+    padding:20px 15px;
+  }
+
+  .search-box input{
+    padding:14px;
+  }
+
+  .search-box button{
+    padding:0 18px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+    padding:25px 15px;
+  }
+
+  .content{
+    grid-template-columns:1fr;
+    padding:0 15px 30px;
+  }
+
+  .board-grid{
+    grid-template-columns:1fr;
+  }
+
+  .update{
+    flex-direction:column;
+    gap:8px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <h1>ResultVani</h1>
-  <p>Latest Jobs • Results • Admit Card • Answer Key • Exam Updates</p>
-</header>
 
-<nav class="nav">
-  <a href="#">Home</a>
-  <a href="#jobs">Latest Jobs</a>
-  <a href="#results">Results</a>
-  <a href="#admit">Admit Card</a>
-  <a href="#answer">Answer Key</a>
-  <a href="#scholarship">Scholarship</a>
-</nav>
+  <div class="logo">
 
-<main class="container">
+    <div class="logo-icon">🎓</div>
 
-  <section class="search">
-    <input type="text" id="searchBox" placeholder="Search Jobs, Results, Exams...">
-    <button onclick="searchSite()">Search</button>
-  </section>
+    <div>
+      <h1><span>Result</span>Vani</h1>
 
-  <div class="notice">
-    📢 Welcome to ResultVani — Latest government job and examination updates.
+      <p>
+        Sarkari Results | Jobs | Admit Card | Scholarship
+      </p>
+    </div>
+
   </div>
 
-  <section class="grid">
+  <div class="tagline">
+    सही जानकारी...<br>
+    सही समय पर...
+  </div>
 
-    <div class="card" id="jobs">
-      <h2>Latest Jobs</h2>
-      <ul>
-        <li><a href="#">SSC Recruitment 2026</a></li>
-        <li><a href="#">Railway Recruitment 2026</a></li>
-        <li><a href="#">Bihar Government Jobs</a></li>
-        <li><a href="#">Police Recruitment</a></li>
-        <li><a href="#">Teaching Jobs</a></li>
-      </ul>
+</header>
+
+
+<!-- NAVIGATION -->
+<nav class="nav">
+
+  <a href="#home">🏠 Home</a>
+
+  <a href="#jobs">💼 Latest Jobs</a>
+
+  <a href="#results">📄 Results</a>
+
+  <a href="#admit">🎟️ Admit Card</a>
+
+  <a href="#scholarship">🎓 Scholarship</a>
+
+  <a href="#boards">🏫 State Boards</a>
+
+  <a href="#links">🔗 Important Links</a>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div>
+
+    <h2>
+      All Sarkari Result,<br>
+      <span>Job & Exam Updates</span>
+    </h2>
+
+    <p>
+      Latest Government Jobs | Results | Admit Card |
+      Scholarship | Exam Updates
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- SEARCH -->
+<section class="search-area">
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      id="searchBox"
+      placeholder="Search Jobs, Results, Admit Card..."
+    >
+
+    <button onclick="searchSite()">
+      Search
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- QUICK LINKS -->
+<section class="quick">
+
+  <strong>⚡ Quick Links:</strong>
+
+  <a href="https://upsc.gov.in/" target="_blank">
+    UPSC
+  </a>
+
+  <a href="https://bpsc.bihar.gov.in/" target="_blank">
+    BPSC
+  </a>
+
+  <a href="https://ssc.gov.in/" target="_blank">
+    SSC
+  </a>
+
+  <a href="https://indianrailways.gov.in/" target="_blank">
+    Railway
+  </a>
+
+  <a href="https://www.ibps.in/" target="_blank">
+    Banking
+  </a>
+
+</section>
+
+
+<!-- CATEGORY CARDS -->
+<section class="cards">
+
+  <a href="#jobs" class="card blue">
+
+    <div>
+      <h3>💼 Latest Jobs</h3>
+      <p>Government Job Notifications</p>
     </div>
 
-    <div class="card" id="results">
-      <h2>Results</h2>
-      <ul>
-        <li><a href="#">SSC Result 2026</a></li>
-        <li><a href="#">Bihar Board Result</a></li>
-        <li><a href="#">University Results</a></li>
-        <li><a href="#">Railway Result</a></li>
-        <li><a href="#">Competitive Exam Results</a></li>
-      </ul>
+    <div class="arrow">→</div>
+
+  </a>
+
+
+  <a href="#results" class="card green">
+
+    <div>
+      <h3>📄 Results</h3>
+      <p>Check Your Exam Result</p>
     </div>
 
-    <div class="card" id="admit">
-      <h2>Admit Card</h2>
-      <ul>
-        <li><a href="#">SSC Admit Card</a></li>
-        <li><a href="#">Railway Admit Card</a></li>
-        <li><a href="#">BPSC Admit Card</a></li>
-        <li><a href="#">Bihar Police Admit Card</a></li>
-        <li><a href="#">Entrance Exam Admit Card</a></li>
-      </ul>
+    <div class="arrow">→</div>
+
+  </a>
+
+
+  <a href="#admit" class="card red">
+
+    <div>
+      <h3>🎟️ Admit Card</h3>
+      <p>Download Admit Card</p>
     </div>
 
-    <div class="card" id="answer">
-      <h2>Answer Key</h2>
-      <ul>
-        <li><a href="#">SSC Answer Key</a></li>
-        <li><a href="#">BPSC Answer Key</a></li>
-        <li><a href="#">Railway Answer Key</a></li>
-        <li><a href="#">Bihar Board Answer Key</a></li>
-        <li><a href="#">Entrance Exam Answer Key</a></li>
-      </ul>
+    <div class="arrow">→</div>
+
+  </a>
+
+
+  <a href="#scholarship" class="card orange">
+
+    <div>
+      <h3>🎓 Scholarship</h3>
+      <p>Scholarship Information</p>
     </div>
 
-    <div class="card" id="scholarship">
-      <h2>Scholarship</h2>
-      <ul>
-        <li><a href="#">NSP Scholarship</a></li>
-        <li><a href="#">Bihar Scholarship</a></li>
-        <li><a href="#">Post Matric Scholarship</a></li>
-        <li><a href="#">College Scholarships</a></li>
-        <li><a href="#">Scholarship Updates</a></li>
-      </ul>
+    <div class="arrow">→</div>
+
+  </a>
+
+
+  <a href="#boards" class="card purple">
+
+    <div>
+      <h3>🏫 State Boards</h3>
+      <p>Board Results & Websites</p>
     </div>
 
-    <div class="card">
-      <h2>Important Links</h2>
-      <ul>
-        <li><a href="#">Official Websites</a></li>
-        <li><a href="#">Exam Calendar</a></li>
-        <li><a href="#">Syllabus</a></li>
-        <li><a href="#">Previous Papers</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
+    <div class="arrow">→</div>
+
+  </a>
+
+
+  <a href="#links" class="card cyan">
+
+    <div>
+      <h3>🔗 Important Links</h3>
+      <p>Useful Government Websites</p>
     </div>
 
-  </section>
+    <div class="arrow">→</div>
 
-</main>
+  </a>
 
-<footer class="footer">
-  <h3>ResultVani</h3>
-  <p>Jobs • Results • Admit Card • Answer Key</p>
-  <p>© 2026 ResultVani. All Rights Reserved.</p>
+</section>
+
+
+<!-- MAIN CONTENT -->
+<section class="content">
+
+
+<!-- JOBS -->
+<div class="section-box" id="jobs">
+
+  <h2>💼 Latest Government Jobs</h2>
+
+
+  <div class="update">
+
+    <div>
+      <a href="https://bpsc.bihar.gov.in/" target="_blank">
+        🟢 BPSC – Latest Recruitment & Notifications
+      </a>
+    </div>
+
+    <a class="btn"
+       href="https://bpsc.bihar.gov.in/home/apply-online/"
+       target="_blank">
+       Apply Online
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <div>
+      <a href="https://www.goa.gov.in/citizen/recruitment/"
+         target="_blank">
+        🟢 Goa Government – Recruitment Notifications
+      </a>
+    </div>
+
+    <a class="btn"
+       href="https://www.goa.gov.in/citizen/recruitment/"
+       target="_blank">
+       View
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <div>
+      <a href="https://ssc.gov.in/" target="_blank">
+        🟢 SSC – Staff Selection Commission
+      </a>
+    </div>
+
+    <a class="btn"
+       href="https://ssc.gov.in/"
+       target="_blank">
+       Visit
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <div>
+      <a href="https://upsc.gov.in/" target="_blank">
+        🟢 UPSC – Union Public Service Commission
+      </a>
+    </div>
+
+    <a class="btn"
+       href="https://upsc.gov.in/"
+       target="_blank">
+       Visit
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- QUOTE -->
+<div class="section-box quote">
+
+  <h3>
+    मेहनत कभी बेकार नहीं जाती,<br>
+    बस सही दिशा और सही जानकारी<br>
+    होनी चाहिए।
+  </h3>
+
+  <p>– ResultVani</p>
+
+</div>
+
+</section>
+
+
+<!-- RESULTS -->
+<section class="content">
+
+<div class="section-box" id="results">
+
+  <h2>📄 Latest Results</h2>
+
+  <div class="update">
+
+    <a href="https://bpsc.bihar.gov.in/" target="_blank">
+      🔵 BPSC Results – Check Official Website
+    </a>
+
+    <a class="btn"
+       href="https://bpsc.bihar.gov.in/"
+       target="_blank">
+       Result
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <a href="https://ssc.gov.in/" target="_blank">
+      🔵 SSC Results – Check Official Website
+    </a>
+
+    <a class="btn"
+       href="https://ssc.gov.in/"
+       target="_blank">
+       Result
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <a href="https://upsc.gov.in/" target="_blank">
+      🔵 UPSC Results – Check Official Website
+    </a>
+
+    <a class="btn"
+       href="https://upsc.gov.in/"
+       target="_blank">
+       Result
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ADMIT CARD -->
+<section class="content">
+
+<div class="section-box" id="admit">
+
+  <h2>🎟️ Admit Card</h2>
+
+  <div class="update">
+
+    <a href="https://bpsc.bihar.gov.in/" target="_blank">
+      🟠 BPSC Admit Card / Interview Letter
+    </a>
+
+    <a class="btn"
+       href="https://bpsc.bihar.gov.in/"
+       target="_blank">
+       Check
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <a href="https://ssc.gov.in/" target="_blank">
+      🟠 SSC Admit Card & Exam Updates
+    </a>
+
+    <a class="btn"
+       href="https://ssc.gov.in/"
+       target="_blank">
+       Check
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- SCHOLARSHIP -->
+<section class="content">
+
+<div class="section-box" id="scholarship">
+
+  <h2>🎓 Scholarship</h2>
+
+  <div class="update">
+
+    <a href="https://scholarships.gov.in/"
+       target="_blank">
+      🟣 National Scholarship Portal – Official Website
+    </a>
+
+    <a class="btn"
+       href="https://scholarships.gov.in/"
+       target="_blank">
+       Visit
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- STATE BOARDS -->
+<section class="content">
+
+<div class="section-box" id="boards">
+
+  <h2>🏫 State Boards</h2>
+
+  <div class="board-grid">
+
+
+    <div class="board">
+
+      <h3>🇮🇳 Bihar Board</h3>
+
+      <a href="https://biharboardonline.bihar.gov.in/"
+         target="_blank">
+         Official Website
+      </a>
+
+    </div>
+
+
+    <div class="board">
+
+      <h3>🇮🇳 UP Board</h3>
+
+      <a href="https://upmsp.edu.in/"
+         target="_blank">
+         Official Website
+      </a>
+
+    </div>
+
+
+    <div class="board">
+
+      <h3>🇮🇳 Jharkhand Board</h3>
+
+      <a href="https://jac.jharkhand.gov.in/"
+         target="_blank">
+         Official Website
+      </a>
+
+    </div>
+
+
+    <div class="board">
+
+      <h3>🇮🇳 MP Board</h3>
+
+      <a href="https://mpbse.nic.in/"
+         target="_blank">
+         Official Website
+      </a>
+
+    </div>
+
+
+    <div class="board">
+
+      <h3>🇮🇳 Rajasthan Board</h3>
+
+      <a href="https://rajeduboard.rajasthan.gov.in/"
+         target="_blank">
+         Official Website
+      </a>
+
+    </div>
+
+
+    <div class="board">
+
+      <h3>🇮🇳 Maharashtra Board</h3>
+
+      <a href="https://mahahsscboard.in/"
+         target="_blank">
+         Official Website
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- IMPORTANT LINKS -->
+<section class="content">
+
+<div class="section-box" id="links">
+
+  <h2>🔗 Important Government Links</h2>
+
+
+  <div class="update">
+
+    <a href="https://www.india.gov.in/"
+       target="_blank">
+       🇮🇳 National Portal of India
+    </a>
+
+    <a class="btn"
+       href="https://www.india.gov.in/"
+       target="_blank">
+       Visit
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <a href="https://www.rrbapply.gov.in/"
+       target="_blank">
+       🚆 Railway Recruitment
+    </a>
+
+    <a class="btn"
+       href="https://www.rrbapply.gov.in/"
+       target="_blank">
+       Visit
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <a href="https://www.ibps.in/"
+       target="_blank">
+       🏦 IBPS Banking Exams
+    </a>
+
+    <a class="btn"
+       href="https://www.ibps.in/"
+       target="_blank">
+       Visit
+    </a>
+
+  </div>
+
+
+  <div class="update">
+
+    <a href="https://www.myscheme.gov.in/"
+       target="_blank">
+       📋 Government Schemes
+    </a>
+
+    <a class="btn"
+       href="https://www.myscheme.gov.in/"
+       target="_blank">
+       Visit
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-main">
+
+    <div>
+
+      <div class="footer-logo">
+        🎓 ResultVani
+      </div>
+
+      <p>
+        Sarkari Results | Jobs | Admit Card |
+        Scholarship | Exam Updates
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © 2026 ResultVani. All Rights Reserved.
+
+    <br><br>
+
+    This website provides links to official government
+    websites for informational purposes.
+
+  </div>
+
 </footer>
 
-<script>
-function searchSite() {
-  const text = document.getElementById("searchBox").value.trim();
 
-  if (text === "") {
+<!-- SEARCH SCRIPT -->
+<script>
+
+function searchSite(){
+
+  const text =
+    document
+    .getElementById("searchBox")
+    .value
+    .trim()
+    .toLowerCase();
+
+
+  if(text === ""){
+
     alert("Please enter something to search.");
-  } else {
-    alert("Searching for: " + text);
+
+    return;
   }
+
+
+  if(
+    text.includes("job") ||
+    text.includes("jobs") ||
+    text.includes("bharti") ||
+    text.includes("recruitment")
+  ){
+
+    document
+    .getElementById("jobs")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+    return;
+  }
+
+
+  if(
+    text.includes("result") ||
+    text.includes("result")
+  ){
+
+    document
+    .getElementById("results")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+    return;
+  }
+
+
+  if(
+    text.includes("admit") ||
+    text.includes("card")
+  ){
+
+    document
+    .getElementById("admit")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+    return;
+  }
+
+
+  if(
+    text.includes("scholarship") ||
+    text.includes("scholarship")
+  ){
+
+    document
+    .getElementById("scholarship")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+    return;
+  }
+
+
+  if(
+    text.includes("board") ||
+    text.includes("bihar board") ||
+    text.includes("up board")
+  ){
+
+    document
+    .getElementById("boards")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+    return;
+  }
+
+
+  alert(
+    "Search result nahi mila. Jobs, Results, Admit Card, Scholarship ya Board try karein."
+  );
+
 }
+
 </script>
 
 </body>
