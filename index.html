@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResultVani - Government Jobs, Results & Exam Updates</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.header {
+  background: #8b0000;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.header h1 {
+  font-size: 36px;
+}
+
+.header p {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.nav {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 13px 18px;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  background: #8b0000;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+
+.search {
+  background: white;
+  padding: 18px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.search input {
+  width: 75%;
+  padding: 12px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.search button {
+  padding: 12px 20px;
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.notice {
+  background: #fff3cd;
+  padding: 12px;
+  margin: 15px 0;
+  border-left: 5px solid #ff9800;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card h2 {
+  color: white;
+  background: #8b0000;
+  text-align: center;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.card ul {
+  list-style: none;
+  padding: 10px 15px;
+}
+
+.card li {
+  border-bottom: 1px solid #eee;
+  padding: 11px 4px;
+}
+
+.card li:last-child {
+  border-bottom: none;
+}
+
+.card a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 30px;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+@media (max-width: 700px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search input {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .search button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1>ResultVani</h1>
+  <p>Latest Jobs • Results • Admit Card • Answer Key • Exam Updates</p>
+</header>
+
+<nav class="nav">
+  <a href="#">Home</a>
+  <a href="#jobs">Latest Jobs</a>
+  <a href="#results">Results</a>
+  <a href="#admit">Admit Card</a>
+  <a href="#answer">Answer Key</a>
+  <a href="#scholarship">Scholarship</a>
+</nav>
+
+<main class="container">
+
+  <section class="search">
+    <input type="text" id="searchBox" placeholder="Search Jobs, Results, Exams...">
+    <button onclick="searchSite()">Search</button>
+  </section>
+
+  <div class="notice">
+    📢 Welcome to ResultVani — Latest government job and examination updates.
+  </div>
+
+  <section class="grid">
+
+    <div class="card" id="jobs">
+      <h2>Latest Jobs</h2>
+      <ul>
+        <li><a href="#">SSC Recruitment 2026</a></li>
+        <li><a href="#">Railway Recruitment 2026</a></li>
+        <li><a href="#">Bihar Government Jobs</a></li>
+        <li><a href="#">Police Recruitment</a></li>
+        <li><a href="#">Teaching Jobs</a></li>
+      </ul>
+    </div>
+
+    <div class="card" id="results">
+      <h2>Results</h2>
+      <ul>
+        <li><a href="#">SSC Result 2026</a></li>
+        <li><a href="#">Bihar Board Result</a></li>
+        <li><a href="#">University Results</a></li>
+        <li><a href="#">Railway Result</a></li>
+        <li><a href="#">Competitive Exam Results</a></li>
+      </ul>
+    </div>
+
+    <div class="card" id="admit">
+      <h2>Admit Card</h2>
+      <ul>
+        <li><a href="#">SSC Admit Card</a></li>
+        <li><a href="#">Railway Admit Card</a></li>
+        <li><a href="#">BPSC Admit Card</a></li>
+        <li><a href="#">Bihar Police Admit Card</a></li>
+        <li><a href="#">Entrance Exam Admit Card</a></li>
+      </ul>
+    </div>
+
+    <div class="card" id="answer">
+      <h2>Answer Key</h2>
+      <ul>
+        <li><a href="#">SSC Answer Key</a></li>
+        <li><a href="#">BPSC Answer Key</a></li>
+        <li><a href="#">Railway Answer Key</a></li>
+        <li><a href="#">Bihar Board Answer Key</a></li>
+        <li><a href="#">Entrance Exam Answer Key</a></li>
+      </ul>
+    </div>
+
+    <div class="card" id="scholarship">
+      <h2>Scholarship</h2>
+      <ul>
+        <li><a href="#">NSP Scholarship</a></li>
+        <li><a href="#">Bihar Scholarship</a></li>
+        <li><a href="#">Post Matric Scholarship</a></li>
+        <li><a href="#">College Scholarships</a></li>
+        <li><a href="#">Scholarship Updates</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Important Links</h2>
+      <ul>
+        <li><a href="#">Official Websites</a></li>
+        <li><a href="#">Exam Calendar</a></li>
+        <li><a href="#">Syllabus</a></li>
+        <li><a href="#">Previous Papers</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <h3>ResultVani</h3>
+  <p>Jobs • Results • Admit Card • Answer Key</p>
+  <p>© 2026 ResultVani. All Rights Reserved.</p>
+</footer>
+
+<script>
+function searchSite() {
+  const text = document.getElementById("searchBox").value.trim();
+
+  if (text === "") {
+    alert("Please enter something to search.");
+  } else {
+    alert("Searching for: " + text);
+  }
+}
+</script>
+
+</body>
+</html>
