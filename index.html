@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,1128 +8,568 @@
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
+    box-sizing:border-box;
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f5f8fc;
-  color:#172b4d;
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f3f6fa;
+    color:#222;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+header{
+    background:#0757a0;
+    color:white;
+    padding:20px 15px;
+    text-align:center;
 }
 
-/* HEADER */
-.header{
-  background:white;
-  padding:18px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+header h1{
+    margin:0;
+    font-size:30px;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
+header p{
+    margin:7px 0 0;
+    font-size:14px;
 }
 
-.logo-icon{
-  font-size:50px;
+nav{
+    background:#063f76;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
-.logo h1{
-  font-size:40px;
-  color:#087eea;
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:12px 15px;
+    font-size:14px;
 }
 
-.logo h1 span{
-  color:#123d78;
+nav a:hover{
+    background:#0757a0;
 }
 
-.logo p{
-  color:#555;
-  font-size:13px;
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:18px;
 }
 
-.tagline{
-  color:#123d78;
-  font-size:18px;
-  font-weight:bold;
-  text-align:right;
-}
-
-/* NAVIGATION */
-.nav{
-  background:#073b78;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.nav a{
-  color:white;
-  padding:16px 18px;
-  font-size:15px;
-}
-
-.nav a:hover{
-  background:#087eea;
-}
-
-/* HERO */
 .hero{
-  min-height:280px;
-  background:linear-gradient(90deg,#062a55,#14669c);
-  color:white;
-  padding:55px 7%;
-  display:flex;
-  align-items:center;
+    background:white;
+    padding:25px 18px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 3px 12px #0001;
+    margin-bottom:18px;
 }
 
 .hero h2{
-  font-size:42px;
-  line-height:1.15;
+    color:#0757a0;
+    margin-top:0;
 }
 
-.hero h2 span{
-  color:#ffd21c;
+.search{
+    display:flex;
+    gap:8px;
+    margin-top:18px;
 }
 
-.hero p{
-  margin-top:18px;
-  font-size:18px;
+.search input{
+    flex:1;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:9px;
+    font-size:16px;
 }
 
-/* SEARCH */
-.search-area{
-  background:white;
-  padding:25px 8%;
+.search button{
+    border:0;
+    background:#0757a0;
+    color:white;
+    padding:0 18px;
+    border-radius:9px;
+    font-weight:bold;
 }
 
-.search-box{
-  display:flex;
-  max-width:850px;
-  margin:auto;
-}
-
-.search-box input{
-  flex:1;
-  padding:16px 20px;
-  border:2px solid #b8d9ff;
-  border-radius:30px 0 0 30px;
-  font-size:16px;
-  outline:none;
-}
-
-.search-box button{
-  border:0;
-  background:#087eea;
-  color:white;
-  padding:0 30px;
-  border-radius:0 30px 30px 0;
-  font-size:16px;
-  cursor:pointer;
-}
-
-/* QUICK LINKS */
-.quick{
-  padding:20px 5%;
-  background:white;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.quick strong{
-  color:#123d78;
-  font-size:17px;
-}
-
-.quick a{
-  background:#eef6ff;
-  color:#064b94;
-  padding:9px 15px;
-  border-radius:20px;
-  border:1px solid #cde4ff;
-}
-
-/* CATEGORY CARDS */
-.cards{
-  padding:35px 4%;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+.section-title{
+    background:#0757a0;
+    color:white;
+    padding:13px;
+    border-radius:10px;
+    margin-top:25px;
 }
 
 .card{
-  color:white;
-  padding:26px;
-  min-height:125px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 5px 15px #0002;
-  transition:.2s;
-}
-
-.card:hover{
-  transform:translateY(-3px);
+    display:block;
+    background:white;
+    text-decoration:none;
+    color:#222;
+    padding:18px;
+    margin:12px 0;
+    border-radius:12px;
+    box-shadow:0 3px 10px #0001;
+    border-left:5px solid #0757a0;
 }
 
 .card h3{
-  font-size:22px;
-  margin-bottom:8px;
+    margin:0 0 8px;
+    color:#0757a0;
 }
 
 .card p{
-  font-size:14px;
+    margin:5px 0;
 }
 
-.blue{background:#0874d1}
-.green{background:#09a66a}
-.red{background:#ed3150}
-.orange{background:#ff8b18}
-.purple{background:#5130c8}
-.cyan{background:#119dad}
-
-.arrow{
-  font-size:30px;
+.status-active{
+    color:#15803d;
+    font-weight:bold;
 }
 
-/* CONTENT */
-.content{
-  padding:0 4% 40px;
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:25px;
+.status-upcoming{
+    color:#b45309;
+    font-weight:bold;
 }
 
-.section-box{
-  background:white;
-  border-radius:14px;
-  padding:25px;
-  box-shadow:0 3px 12px #0001;
+.status-previous{
+    color:#555;
+    font-weight:bold;
 }
 
-.section-box h2{
-  color:#123d78;
-  margin-bottom:18px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
 }
 
-/* UPDATE ITEM */
-.update{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:15px 5px;
-  border-bottom:1px solid #ddd;
+.category{
+    background:white;
+    padding:18px 10px;
+    border-radius:12px;
+    text-align:center;
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+    box-shadow:0 3px 10px #0001;
 }
 
-.update a{
-  color:#123d78;
-  font-weight:bold;
+.category:hover{
+    background:#eef6ff;
 }
 
-.update span{
-  color:#777;
-  white-space:nowrap;
+.info{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-top:18px;
+    box-shadow:0 3px 10px #0001;
 }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  background:#087eea;
-  color:white;
-  padding:8px 14px;
-  border-radius:6px;
-  font-size:13px;
-  font-weight:bold;
+.info h2{
+    color:#0757a0;
+    margin-top:0;
 }
 
-.btn:hover{
-  background:#075cae;
+.share{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-top:25px;
+    text-align:center;
+    box-shadow:0 3px 10px #0001;
 }
 
-/* BOARD GRID */
-.board-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.board{
-  background:#f2f7ff;
-  border:1px solid #d5e6ff;
-  padding:18px;
-  border-radius:10px;
-  text-align:center;
-}
-
-.board h3{
-  color:#123d78;
-  margin-bottom:12px;
-}
-
-.board a{
-  display:block;
-  background:#087eea;
-  color:white;
-  padding:8px;
-  margin-top:7px;
-  border-radius:5px;
-  font-size:13px;
-}
-
-/* QUOTE */
-.quote{
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.quote h3{
-  color:#123d78;
-  line-height:1.6;
-}
-
-.quote p{
-  margin-top:15px;
-  color:#087eea;
-  font-weight:bold;
-}
-
-/* FOOTER */
-footer{
-  background:#062b55;
-  color:white;
-  padding:35px 5%;
-}
-
-.footer-main{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.footer-logo{
-  font-size:27px;
-  font-weight:bold;
-}
-
-.copyright{
-  text-align:center;
-  border-top:1px solid #ffffff33;
-  margin-top:25px;
-  padding-top:20px;
-  color:#ddd;
-}
-
-/* MOBILE */
-@media(max-width:750px){
-
-  .header{
-    padding:15px;
-  }
-
-  .logo h1{
-    font-size:30px;
-  }
-
-  .logo-icon{
-    font-size:38px;
-  }
-
-  .logo p{
-    font-size:10px;
-  }
-
-  .tagline{
-    display:none;
-  }
-
-  .nav a{
-    padding:11px 9px;
-    font-size:12px;
-  }
-
-  .hero{
-    min-height:230px;
-    padding:35px 22px;
-  }
-
-  .hero h2{
-    font-size:30px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  .search-area{
-    padding:20px 15px;
-  }
-
-  .search-box input{
+.share button{
+    width:100%;
+    max-width:350px;
     padding:14px;
-  }
+    border:0;
+    border-radius:9px;
+    background:#0757a0;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+}
 
-  .search-box button{
-    padding:0 18px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
+footer{
+    margin-top:30px;
+    background:#063f76;
+    color:white;
+    text-align:center;
     padding:25px 15px;
-  }
+}
 
-  .content{
-    grid-template-columns:1fr;
-    padding:0 15px 30px;
-  }
+@media(max-width:600px){
 
-  .board-grid{
-    grid-template-columns:1fr;
-  }
+    .grid{
+        grid-template-columns:1fr;
+    }
 
-  .update{
-    flex-direction:column;
-    gap:8px;
-  }
+    nav{
+        display:block;
+        text-align:center;
+    }
 
+    nav a{
+        display:block;
+        border-bottom:1px solid #ffffff22;
+    }
+
+    .search{
+        display:block;
+    }
+
+    .search button{
+        width:100%;
+        padding:13px;
+        margin-top:8px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-
-  <div class="logo">
-
-    <div class="logo-icon">🎓</div>
-
-    <div>
-      <h1><span>Result</span>Vani</h1>
-
-      <p>
-        Sarkari Results | Jobs | Admit Card | Scholarship
-      </p>
-    </div>
-
-  </div>
-
-  <div class="tagline">
-    सही जानकारी...<br>
-    सही समय पर...
-  </div>
-
+<header>
+    <h1>📚 ResultVani</h1>
+    <p>Government Jobs, Results & Exam Updates</p>
 </header>
 
-
-<!-- NAVIGATION -->
-<nav class="nav">
-
-  <a href="#home">🏠 Home</a>
-
-  <a href="#jobs">💼 Latest Jobs</a>
-
-  <a href="#results">📄 Results</a>
-
-  <a href="#admit">🎟️ Admit Card</a>
-
-  <a href="#scholarship">🎓 Scholarship</a>
-
-  <a href="#boards">🏫 State Boards</a>
-
-  <a href="#links">🔗 Important Links</a>
-
+<nav>
+    <a href="#home">Home</a>
+    <a href="#jobs">Latest Jobs</a>
+    <a href="#forms">Online Forms</a>
+    <a href="#results">Results</a>
+    <a href="#admit">Admit Card</a>
+    <a href="#answer">Answer Key</a>
 </nav>
 
+<div class="container" id="home">
 
-<!-- HERO -->
-<section class="hero" id="home">
+<div class="hero">
 
-  <div>
-
-    <h2>
-      All Sarkari Result,<br>
-      <span>Job & Exam Updates</span>
-    </h2>
+    <h2>Welcome to ResultVani</h2>
 
     <p>
-      Latest Government Jobs | Results | Admit Card |
-      Scholarship | Exam Updates
+        सरकारी नौकरी, भर्ती, रिजल्ट, एडमिट कार्ड,
+        आंसर की, स्कॉलरशिप और परीक्षा से जुड़ी
+        महत्वपूर्ण जानकारी एक जगह।
     </p>
 
-  </div>
-
-</section>
-
-
-<!-- SEARCH -->
-<section class="search-area">
-
-  <div class="search-box">
-
-    <input
-      type="text"
-      id="searchBox"
-      placeholder="Search Jobs, Results, Admit Card..."
-    >
-
-    <button onclick="searchSite()">
-      Search
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- QUICK LINKS -->
-<section class="quick">
-
-  <strong>⚡ Quick Links:</strong>
-
-  <a href="https://upsc.gov.in/" target="_blank">
-    UPSC
-  </a>
-
-  <a href="https://bpsc.bihar.gov.in/" target="_blank">
-    BPSC
-  </a>
-
-  <a href="https://ssc.gov.in/" target="_blank">
-    SSC
-  </a>
-
-  <a href="https://indianrailways.gov.in/" target="_blank">
-    Railway
-  </a>
-
-  <a href="https://www.ibps.in/" target="_blank">
-    Banking
-  </a>
-
-</section>
-
-
-<!-- CATEGORY CARDS -->
-<section class="cards">
-
-  <a href="#jobs" class="card blue">
-
-    <div>
-      <h3>💼 Latest Jobs</h3>
-      <p>Government Job Notifications</p>
+    <div class="search">
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Job, Result, BPSC, SSC..."
+        >
+        <button onclick="searchSite()">Search</button>
     </div>
-
-    <div class="arrow">→</div>
-
-  </a>
-
-
-  <a href="#results" class="card green">
-
-    <div>
-      <h3>📄 Results</h3>
-      <p>Check Your Exam Result</p>
-    </div>
-
-    <div class="arrow">→</div>
-
-  </a>
-
-
-  <a href="#admit" class="card red">
-
-    <div>
-      <h3>🎟️ Admit Card</h3>
-      <p>Download Admit Card</p>
-    </div>
-
-    <div class="arrow">→</div>
-
-  </a>
-
-
-  <a href="#scholarship" class="card orange">
-
-    <div>
-      <h3>🎓 Scholarship</h3>
-      <p>Scholarship Information</p>
-    </div>
-
-    <div class="arrow">→</div>
-
-  </a>
-
-
-  <a href="#boards" class="card purple">
-
-    <div>
-      <h3>🏫 State Boards</h3>
-      <p>Board Results & Websites</p>
-    </div>
-
-    <div class="arrow">→</div>
-
-  </a>
-
-
-  <a href="#links" class="card cyan">
-
-    <div>
-      <h3>🔗 Important Links</h3>
-      <p>Useful Government Websites</p>
-    </div>
-
-    <div class="arrow">→</div>
-
-  </a>
-
-</section>
-
-
-<!-- MAIN CONTENT -->
-<section class="content">
-
-
-<!-- JOBS -->
-<div class="section-box" id="jobs">
-
-  <h2>💼 Latest Government Jobs</h2>
-
-
-  <div class="update">
-
-    <div>
-      <a href="https://bpsc.bihar.gov.in/" target="_blank">
-        🟢 BPSC – Latest Recruitment & Notifications
-      </a>
-    </div>
-
-    <a class="btn"
-       href="https://bpsc.bihar.gov.in/home/apply-online/"
-       target="_blank">
-       Apply Online
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <div>
-      <a href="https://www.goa.gov.in/citizen/recruitment/"
-         target="_blank">
-        🟢 Goa Government – Recruitment Notifications
-      </a>
-    </div>
-
-    <a class="btn"
-       href="https://www.goa.gov.in/citizen/recruitment/"
-       target="_blank">
-       View
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <div>
-      <a href="https://ssc.gov.in/" target="_blank">
-        🟢 SSC – Staff Selection Commission
-      </a>
-    </div>
-
-    <a class="btn"
-       href="https://ssc.gov.in/"
-       target="_blank">
-       Visit
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <div>
-      <a href="https://upsc.gov.in/" target="_blank">
-        🟢 UPSC – Union Public Service Commission
-      </a>
-    </div>
-
-    <a class="btn"
-       href="https://upsc.gov.in/"
-       target="_blank">
-       Visit
-    </a>
-
-  </div>
 
 </div>
 
 
-<!-- QUOTE -->
-<div class="section-box quote">
+<!-- LATEST JOBS -->
 
-  <h3>
-    मेहनत कभी बेकार नहीं जाती,<br>
-    बस सही दिशा और सही जानकारी<br>
-    होनी चाहिए।
-  </h3>
+<h2 class="section-title" id="jobs">
+🆕 Latest Jobs
+</h2>
 
-  <p>– ResultVani</p>
+<a class="card" href="bpsc.html">
+    <h3>🏛️ BPSC</h3>
+    <p class="status-active">🟢 Active / Upcoming / Previous</p>
+    <p>BPSC की भर्ती और परीक्षा संबंधी जानकारी</p>
+</a>
 
-</div>
+<a class="card" href="#">
+    <h3>📋 SSC</h3>
+    <p class="status-active">🟢 Active / Upcoming / Previous</p>
+    <p>SSC की विभिन्न सरकारी भर्तियां</p>
+</a>
 
-</section>
+<a class="card" href="#">
+    <h3>🚆 Railway</h3>
+    <p class="status-active">🟢 Active / Upcoming / Previous</p>
+    <p>रेलवे भर्ती और परीक्षा अपडेट</p>
+</a>
+
+<a class="card" href="#">
+    <h3>🏦 Banking</h3>
+    <p class="status-active">🟢 Active / Upcoming / Previous</p>
+    <p>Banking भर्ती और परीक्षा जानकारी</p>
+</a>
+
+<a class="card" href="#">
+    <h3>👨‍🏫 Teaching</h3>
+    <p class="status-active">🟢 Active / Upcoming / Previous</p>
+    <p>Teacher भर्ती और शिक्षा विभाग की नौकरियां</p>
+</a>
+
+
+<!-- ONLINE FORMS -->
+
+<h2 class="section-title" id="forms">
+📝 Online Forms
+</h2>
+
+<a class="card" href="#">
+    <h3>🟢 Active Forms</h3>
+    <p>अभी जिन सरकारी भर्तियों के लिए आवेदन चल रहा है।</p>
+</a>
+
+<a class="card" href="#">
+    <h3>📅 Upcoming Forms</h3>
+    <p>जिन भर्तियों के आवेदन आगे शुरू होने वाले हैं।</p>
+</a>
+
+<a class="card" href="#">
+    <h3>📚 Previous Forms</h3>
+    <p>पहले जारी हो चुके आवेदन और भर्ती जानकारी।</p>
+</a>
 
 
 <!-- RESULTS -->
-<section class="content">
 
-<div class="section-box" id="results">
+<h2 class="section-title" id="results">
+📄 Results
+</h2>
 
-  <h2>📄 Latest Results</h2>
+<a class="card" href="#">
+    <h3>🆕 Latest Results</h3>
+    <p>हाल ही में जारी हुए सरकारी परीक्षा परिणाम।</p>
+</a>
 
-  <div class="update">
+<a class="card" href="#">
+    <h3>📅 Upcoming Results</h3>
+    <p>आने वाले परीक्षा परिणामों की जानकारी।</p>
+</a>
 
-    <a href="https://bpsc.bihar.gov.in/" target="_blank">
-      🔵 BPSC Results – Check Official Website
-    </a>
-
-    <a class="btn"
-       href="https://bpsc.bihar.gov.in/"
-       target="_blank">
-       Result
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <a href="https://ssc.gov.in/" target="_blank">
-      🔵 SSC Results – Check Official Website
-    </a>
-
-    <a class="btn"
-       href="https://ssc.gov.in/"
-       target="_blank">
-       Result
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <a href="https://upsc.gov.in/" target="_blank">
-      🔵 UPSC Results – Check Official Website
-    </a>
-
-    <a class="btn"
-       href="https://upsc.gov.in/"
-       target="_blank">
-       Result
-    </a>
-
-  </div>
-
-</div>
-
-</section>
+<a class="card" href="#">
+    <h3>📚 Previous Results</h3>
+    <p>पहले जारी किए गए Results।</p>
+</a>
 
 
 <!-- ADMIT CARD -->
-<section class="content">
 
-<div class="section-box" id="admit">
+<h2 class="section-title" id="admit">
+🎟️ Admit Card
+</h2>
 
-  <h2>🎟️ Admit Card</h2>
+<a class="card" href="#">
+    <h3>🟢 Available Admit Cards</h3>
+    <p>अभी उपलब्ध Admit Card की जानकारी।</p>
+</a>
 
-  <div class="update">
-
-    <a href="https://bpsc.bihar.gov.in/" target="_blank">
-      🟠 BPSC Admit Card / Interview Letter
-    </a>
-
-    <a class="btn"
-       href="https://bpsc.bihar.gov.in/"
-       target="_blank">
-       Check
-    </a>
-
-  </div>
+<a class="card" href="#">
+    <h3>📅 Upcoming Admit Cards</h3>
+    <p>आने वाले Admit Card की जानकारी।</p>
+</a>
 
 
-  <div class="update">
+<!-- ANSWER KEY -->
 
-    <a href="https://ssc.gov.in/" target="_blank">
-      🟠 SSC Admit Card & Exam Updates
-    </a>
+<h2 class="section-title" id="answer">
+🔑 Answer Key
+</h2>
 
-    <a class="btn"
-       href="https://ssc.gov.in/"
-       target="_blank">
-       Check
-    </a>
+<a class="card" href="#">
+    <h3>🆕 Latest Answer Key</h3>
+    <p>हाल में जारी Answer Key।</p>
+</a>
 
-  </div>
-
-</div>
-
-</section>
+<a class="card" href="#">
+    <h3>📚 Previous Answer Key</h3>
+    <p>पहले जारी Answer Key।</p>
+</a>
 
 
-<!-- SCHOLARSHIP -->
-<section class="content">
+<!-- OTHER CATEGORIES -->
 
-<div class="section-box" id="scholarship">
+<h2 class="section-title">
+📚 More Services
+</h2>
 
-  <h2>🎓 Scholarship</h2>
+<div class="grid">
 
-  <div class="update">
+<a class="category" href="#">
+📚<br>Syllabus
+</a>
 
-    <a href="https://scholarships.gov.in/"
-       target="_blank">
-      🟣 National Scholarship Portal – Official Website
-    </a>
+<a class="category" href="#">
+🎓<br>Admission
+</a>
 
-    <a class="btn"
-       href="https://scholarships.gov.in/"
-       target="_blank">
-       Visit
-    </a>
+<a class="category" href="#">
+🎓<br>Scholarship
+</a>
 
-  </div>
+<a class="category" href="#">
+🏛️<br>Sarkari Yojana
+</a>
 
-</div>
+<a class="category" href="#">
+🏫<br>University
+</a>
 
-</section>
+<a class="category" href="#">
+📖<br>Board
+</a>
 
+<a class="category" href="#">
+📅<br>Exam Calendar
+</a>
 
-<!-- STATE BOARDS -->
-<section class="content">
-
-<div class="section-box" id="boards">
-
-  <h2>🏫 State Boards</h2>
-
-  <div class="board-grid">
-
-
-    <div class="board">
-
-      <h3>🇮🇳 Bihar Board</h3>
-
-      <a href="https://biharboardonline.bihar.gov.in/"
-         target="_blank">
-         Official Website
-      </a>
-
-    </div>
-
-
-    <div class="board">
-
-      <h3>🇮🇳 UP Board</h3>
-
-      <a href="https://upmsp.edu.in/"
-         target="_blank">
-         Official Website
-      </a>
-
-    </div>
-
-
-    <div class="board">
-
-      <h3>🇮🇳 Jharkhand Board</h3>
-
-      <a href="https://jac.jharkhand.gov.in/"
-         target="_blank">
-         Official Website
-      </a>
-
-    </div>
-
-
-    <div class="board">
-
-      <h3>🇮🇳 MP Board</h3>
-
-      <a href="https://mpbse.nic.in/"
-         target="_blank">
-         Official Website
-      </a>
-
-    </div>
-
-
-    <div class="board">
-
-      <h3>🇮🇳 Rajasthan Board</h3>
-
-      <a href="https://rajeduboard.rajasthan.gov.in/"
-         target="_blank">
-         Official Website
-      </a>
-
-    </div>
-
-
-    <div class="board">
-
-      <h3>🇮🇳 Maharashtra Board</h3>
-
-      <a href="https://mahahsscboard.in/"
-         target="_blank">
-         Official Website
-      </a>
-
-    </div>
-
-  </div>
+<a class="category" href="#">
+📢<br>Notifications
+</a>
 
 </div>
 
-</section>
 
+<!-- STATES -->
 
-<!-- IMPORTANT LINKS -->
-<section class="content">
+<h2 class="section-title">
+🇮🇳 State Wise
+</h2>
 
-<div class="section-box" id="links">
+<div class="grid">
 
-  <h2>🔗 Important Government Links</h2>
-
-
-  <div class="update">
-
-    <a href="https://www.india.gov.in/"
-       target="_blank">
-       🇮🇳 National Portal of India
-    </a>
-
-    <a class="btn"
-       href="https://www.india.gov.in/"
-       target="_blank">
-       Visit
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <a href="https://www.rrbapply.gov.in/"
-       target="_blank">
-       🚆 Railway Recruitment
-    </a>
-
-    <a class="btn"
-       href="https://www.rrbapply.gov.in/"
-       target="_blank">
-       Visit
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <a href="https://www.ibps.in/"
-       target="_blank">
-       🏦 IBPS Banking Exams
-    </a>
-
-    <a class="btn"
-       href="https://www.ibps.in/"
-       target="_blank">
-       Visit
-    </a>
-
-  </div>
-
-
-  <div class="update">
-
-    <a href="https://www.myscheme.gov.in/"
-       target="_blank">
-       📋 Government Schemes
-    </a>
-
-    <a class="btn"
-       href="https://www.myscheme.gov.in/"
-       target="_blank">
-       Visit
-    </a>
-
-  </div>
+<a class="category" href="#">Bihar</a>
+<a class="category" href="#">Uttar Pradesh</a>
+<a class="category" href="#">Jharkhand</a>
+<a class="category" href="#">Rajasthan</a>
+<a class="category" href="#">Madhya Pradesh</a>
+<a class="category" href="#">Maharashtra</a>
+<a class="category" href="#">Delhi</a>
+<a class="category" href="#">West Bengal</a>
+<a class="category" href="#">Haryana</a>
+<a class="category" href="#">Chhattisgarh</a>
+<a class="category" href="#">Uttarakhand</a>
+<a class="category" href="#">Other States</a>
 
 </div>
 
-</section>
+
+<!-- ABOUT -->
+
+<div class="info">
+
+<h2>📌 ResultVani के बारे में</h2>
+
+<p>
+ResultVani का उद्देश्य सरकारी नौकरी, परीक्षा,
+रिजल्ट, एडमिट कार्ड, स्कॉलरशिप और अन्य
+महत्वपूर्ण शैक्षणिक जानकारी को सरल तरीके से
+एक जगह उपलब्ध कराना है।
+</p>
+
+<p>
+किसी भी आवेदन से पहले संबंधित विभाग की
+आधिकारिक notification और website पर
+जानकारी जरूर verify करें।
+</p>
+
+</div>
 
 
-<!-- FOOTER -->
+<!-- SHARE -->
+
+<div class="share">
+
+<h2>📤 ResultVani शेयर करें</h2>
+
+<p>
+अगर ResultVani की जानकारी आपके लिए उपयोगी है,
+तो इसे अपने दोस्तों और विद्यार्थियों के साथ शेयर करें।
+</p>
+
+<button onclick="sharePage()">
+📤 Share ResultVani
+</button>
+
+</div>
+
+</div>
+
+
 <footer>
 
-  <div class="footer-main">
+<p>© 2026 ResultVani</p>
 
-    <div>
-
-      <div class="footer-logo">
-        🎓 ResultVani
-      </div>
-
-      <p>
-        Sarkari Results | Jobs | Admit Card |
-        Scholarship | Exam Updates
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="copyright">
-
-    © 2026 ResultVani. All Rights Reserved.
-
-    <br><br>
-
-    This website provides links to official government
-    websites for informational purposes.
-
-  </div>
+<p>
+Government Jobs • Results • Admit Card • Forms
+</p>
 
 </footer>
 
 
-<!-- SEARCH SCRIPT -->
 <script>
 
 function searchSite(){
 
-  const text =
-    document
-    .getElementById("searchBox")
+    let text =
+    document.getElementById("searchBox")
     .value
-    .trim()
-    .toLowerCase();
+    .toLowerCase()
+    .trim();
+
+    if(text === ""){
+        alert("कृपया कुछ search करें।");
+        return;
+    }
+
+    if(
+        text.includes("bpsc")
+    ){
+        window.location.href="bpsc.html";
+        return;
+    }
+
+    alert(
+        "Search result अभी manually add किया जाएगा।"
+    );
+}
 
 
-  if(text === ""){
+async function sharePage(){
 
-    alert("Please enter something to search.");
+    if(navigator.share){
 
-    return;
-  }
+        try{
 
+            await navigator.share({
+                title:"ResultVani",
+                text:"Government Jobs, Results और Exam Updates के लिए ResultVani देखें।",
+                url:window.location.href
+            });
 
-  if(
-    text.includes("job") ||
-    text.includes("jobs") ||
-    text.includes("bharti") ||
-    text.includes("recruitment")
-  ){
+        }catch(error){}
 
-    document
-    .getElementById("jobs")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+    }else{
 
-    return;
-  }
+        try{
 
+            await navigator.clipboard.writeText(
+                window.location.href
+            );
 
-  if(
-    text.includes("result") ||
-    text.includes("result")
-  ){
+            alert(
+                "Page का link copy हो गया। अब इसे WhatsApp या किसी भी app में share कर सकते हैं।"
+            );
 
-    document
-    .getElementById("results")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+        }catch(error){
 
-    return;
-  }
+            alert(
+                "इस browser में share सुविधा उपलब्ध नहीं है।"
+            );
 
+        }
 
-  if(
-    text.includes("admit") ||
-    text.includes("card")
-  ){
-
-    document
-    .getElementById("admit")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-    return;
-  }
-
-
-  if(
-    text.includes("scholarship") ||
-    text.includes("scholarship")
-  ){
-
-    document
-    .getElementById("scholarship")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-    return;
-  }
-
-
-  if(
-    text.includes("board") ||
-    text.includes("bihar board") ||
-    text.includes("up board")
-  ){
-
-    document
-    .getElementById("boards")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-    return;
-  }
-
-
-  alert(
-    "Search result nahi mila. Jobs, Results, Admit Card, Scholarship ya Board try karein."
-  );
-
+    }
 }
 
 </script>
